@@ -1,0 +1,71 @@
+@page "/login"
+@using Microsoft.AspNetCore.Identity
+@using System.ComponentModel.DataAnnotations
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<h3>Login</h3>
+
+<EditForm Model="@model" OnValidSubmit="HandleLogin">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <InputText id="email" @bind-Value="model.Email" class="form-control" />
+        <ValidationMessage For="@(() => model.Email)" />
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <InputText id="password" @bind-Value="model.Password" class="form-control" type="password" />
+        <ValidationMessage For="@(() => model.Password)" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+</EditForm>
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <div class="alert alert-info mt-3">@message</div>
+}
+
+@code {
+    private LoginModel model = new LoginModel();
+    private string message = string.Empty;
+
+    private async Task HandleLogin()
+    {
+        var user = await UserManager.FindByEmailAsync(model.Email);
+        if (user != null)
+        {
+            var result = await SignInManager.CheckPasswordSignInAsync(user, model.Password, false);
+            if (result.Succeeded)
+            {
+                message = "Successfully logged in!";
+                NavigationManager.NavigateTo("/restricted");
+            }
+            else
+            {
+                message = "Invalid username or password";
+            }
+        }
+        else
+        {
+            message = "Invalid username or password";
+        }
+    }
+
+    public class LoginModel
+    {
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; }
+
+        [Required]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+    }
+}
