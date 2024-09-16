@@ -76,3 +76,4 @@ C:\Users\juuso\loppuproje\BlazorPhoneStore\obj\Debug\net7.0\refint\BlazorPhoneSt
 C:\Users\juuso\loppuproje\BlazorPhoneStore\obj\Debug\net7.0\BlazorPhoneStore.pdb
 C:\Users\juuso\loppuproje\BlazorPhoneStore\obj\Debug\net7.0\BlazorPhoneStore.genruntimeconfig.cache
 C:\Users\juuso\loppuproje\BlazorPhoneStore\obj\Debug\net7.0\ref\BlazorPhoneStore.dll
+C:\Users\juuso\loppuproje\BlazorPhoneStore\obj\Debug\net7.0\BlazorPhoneStore.sourcelink.json

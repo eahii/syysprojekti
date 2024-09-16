@@ -2,8 +2,19 @@
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>Tervetuloa!</h1>
 
-Welcome to your new app.
+Rekisteröityminen toimii, tallentaa ne tietokantaan. Ei voi rekisteröityä samalla spostilla mikä löytyy to db:stä ja
+salasanakin vaatii isoo kirjainta numeroo jne
+login toimii nyt kans, ei anna kirjautua muutakun niillä tiedoilla jotka on jo tietokanassa, eli tarkistaa email/pw.
+Tällä hetkellä vie vaan "restricted" - sivulle
+yritin tehä jotain semmosta ettei sitä sivua vois tarkastella menemällä vaan urlilla sinne kirjautumatta, mut en jaksanu
+enempää tältä päivältä lol.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<!-- Navigation Links for Login and Register -->
+<nav>
+    <ul>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Register</a></li>
+    </ul>
+</nav>

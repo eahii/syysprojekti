@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BlazorPhoneStore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c30a269e8d2f1335afe395fc4ae9e4c8d9019487")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e9ae166ddbb9406e21d08216a3221ae34753bd3b")]
 [assembly: System.Reflection.AssemblyProductAttribute("BlazorPhoneStore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BlazorPhoneStore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
